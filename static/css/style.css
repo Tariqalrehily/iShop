@@ -1,4 +1,26 @@
 body {
-    width: 50%;
+    width: 80%;
     margin: auto;
+}
+/* card */
+.card {
+    border-radius: border;
+}
+/* cart count */
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+/* Product image */
+.product-image {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
 }

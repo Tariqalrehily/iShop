@@ -9,14 +9,15 @@
 <div class="row row-flex">
     {% for item in cart_items %}
     
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display panel-warning">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4">
+        
         <!-- Show all product that only in the cart item -->
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
         
-        <div class="caption">
-            <h3>{{ item.product.name }}</h3>
-            <p class="product-description">{{ item.product.description }}</p>
-            <p>{{ item.product.price }}</p>
+        <div class="card card-body">
+            <div class="card-title"><h3>{{ item.product.name }}</h3></div>
+            <!-- <p class="product-description">{{ item.product.description }}</p> -->
+            <p class="card-text">{{ item.product.price }}</p>
             <p>
                 
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
@@ -29,7 +30,7 @@
                             <div class="input-group-addon">{{item.quantity}}</div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                    <button type="submit" class="btn btn-secondary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</button>
                 </form>
             </p>
         </div>
@@ -38,8 +39,7 @@
 </div>
 <!-- Checkout -->
 <div class="row">
-    <p>Total</p>
-    <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
+    <p>Total: <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
     <a href="/" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
 </div>
 
