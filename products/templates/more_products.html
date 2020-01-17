@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="img"></div>
 <div class="row row-flex">
     
     {% for product in products %}
@@ -11,6 +10,7 @@
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="product-description">{{ product.description }}</p>
                     <p class="card-text">${{ product.price }}</p>
+
                     <hr>
                     <form method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
@@ -24,6 +24,7 @@
             </div>
         </div>
      {% endfor %}
+
 </div>
-<hr><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'more_products' %}">More Products <span class="sr-only">(current)</span></a></hr>
+<hr><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'products' %}">Go Back <span class="sr-only">(current)</span></a></hr>
 {% endblock %}

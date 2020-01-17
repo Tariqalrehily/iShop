@@ -8,7 +8,6 @@ class MakePaymentForm(forms.Form):
     cvv = forms.CharField(label='CVV', required=False)
     expiry_month = forms.ChoiceField(label='Month', choices=[(i, i) for i in range(1, 12)], required=False)
     expiry_year = forms.ChoiceField(label='Year', choices=[(i, i) for i in range(2020, 2037)], required=False)
-    # input hiden from the user
     stripe_id = forms.CharField(widget=forms.HiddenInput)
 
 

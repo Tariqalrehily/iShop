@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Our Product model
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
