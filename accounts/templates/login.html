@@ -2,6 +2,8 @@
 
 {% load bootstrap_tags %}
 
+{% block title %}Login{% endblock %}
+
 {% block page_title %}Login Page{% endblock %} 
  
 {% block page_heading %}Login{% endblock %}
@@ -9,6 +11,7 @@
 {% block content %}
     <form method="POST">
         {% csrf_token %}
+        <p>You must be login to view your cart!</p>
         {{ login_form | as_bootstrap}}
         <button type="submit" class="btn btn-outline-primary">Login</button>
     </form>

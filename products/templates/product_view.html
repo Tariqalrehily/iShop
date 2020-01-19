@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% load bootstrap_tags %}
+
+<!-- product content -->
+{% block content %}
+    <!-- <div class="row row-flex justify-content-center align-items-center mt-5"></div> -->
+
+    <!-- Name -->
+    <div class="row">
+        <div class="col-sm-12 col-md-12 align-items-center mt-5">
+         <h3>{{ product.name }}</h3>
+        </div>
+    </div>
+
+    <!-- image -->
+    <div class="row">
+        <div class="col-sm-12 col-md-4 align-items-left mt-5 mb-5">
+        <div class="product-image-view" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+        </div>
+    </div>
+
+    <!-- Price -->
+    <div class="row">
+        <div class="col-sm-12 col-md-4 align-items-left ">
+            <p><strong>Price: </strong> ${{ product.price }}</p>
+        </div>
+    </div>
+    <hr>
+     <!-- Qty, and add to cart -->
+    <div class="row">
+        <div class="col-sm-10 col-md-6 col-lg-4 align-items-left mb-5">
+         <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="50" class="form-control quantity" placeholder="Qty">
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning addToCart" type="submit">Add To Cart</button>
+                        </span>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="row">
+        <div class="col">
+            <p><strong>Description</strong> <br>{{ product.description }}</p>
+        </div>
+    </div>
+
+<hr><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'products' %}">Go Back <span class="sr-only">(current)</span></a></hr>
+{% endblock %}

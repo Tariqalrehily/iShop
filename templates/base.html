@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iShop</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
 </head>
 
 <body>
 <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">iShop</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="{% url 'products' %}">iShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,7 +22,7 @@
             <ul class="navbar-nav mr-auto">
             <!-- Home  -->
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'products' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'more_products' %}">Products <span class="sr-only">(current)</span></a>
             </li>
             <!-- if user is logged in show Profile and logout-->
             {% if user.is_authenticated %}
@@ -43,7 +44,7 @@
             <!-- Cart -->
             <li>
                 <a href="{% url 'view_cart' %}">
-                    <i class="fa fa-shipping-cart"></i> cart
+                    <i class="fa fa-shopping-cart"></i>
                     {% if product_count > 0 %}
                      <label class="badge badge-warning">{{ product_count }}</label>
                     {% endif %}
@@ -57,11 +58,10 @@
             </form>
         </div>
     </nav>
-      <h1>
-        {% block page_heading %}
-        {% endblock %}
-    </h1>
-
+         <h1 class="h1">
+            {% block page_heading %}
+            {% endblock %}
+        </h1>
     {% if messages %}
     <div>
         {% for message in messages %} 
@@ -74,12 +74,55 @@
     <!-- main area for iShop project -->
     {% endblock %}
     </div>
-    <footer>
-          <div>
-            <div class="container">
+    <!-- Footer: Credit to Namiq Namaz -->
+    <footer class="mainfooter" role="contentinfo">
+    <div class="footer-middle">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+            <h4>Popular Links</h4>
+            <ul class="list-unstyled">
+                <li><a href="#"></a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">All Products</a></li>
+            </ul>
             </div>
-          </div>
-    </footer>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+            <h4>Support</h4>
+            <ul class="list-unstyled">
+                <li><a href="#">Contct US</a></li>
+                <li><a href="#">Complain</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li>
+                <a href="#"></a>
+                </li>
+            </ul>
+            </div>
+        </div>
+            <div class="col-md-4">
+                <h4>Follow Us</h4>
+                <ul class="social-network social-circle">
+                <li><a href="https://twitter.com/orly1100" class="icoTwitter" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/tariqalrehily/" class="icoLinkedin" title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                </ul>				
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 copy">
+                <p class="text-center">&copy; Copyright 2018 - iShop.  All rights reserved.</p>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {% block head_js %}
