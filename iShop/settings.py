@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-# import env
+import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,7 +27,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8080-c64d558e-44db-4757-9773-80f00ca08887.ws-eu01.gitpod.io']
+ALLOWED_HOSTS = ['8080-c64d558e-44db-4757-9773-80f00ca08887.ws-eu01.gitpod.io',
+                'ishop-tar.herokuapp.com']
 
 
 # Application definition so migrates knowes which apps
