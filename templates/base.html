@@ -27,18 +27,18 @@
             <!-- if user is logged in show Profile and logout-->
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Logout</a>
             </li>
             <!-- If user is not yet logged in show  Register and Login-->
             {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'registration' %}">Register</a>
+                <a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i>Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Login</a>
             </li>
             {% endif %}
             <!-- Cart -->
