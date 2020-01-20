@@ -5,26 +5,32 @@
 {% block content %}
 <div class="img"></div>
 <!-- About  -->
-<div class="container about_us">
-        <h1>About Us</h1>
-        <p>iShop over vierty of tech products such as phone, labtops, and watches.</br>
+<div class="container text-center mt-5 mb-5 about_us">
+        <p">iShop over vierty of tech products such as phone, labtops, and watches.</br>
         iShop is an online shop gives you the obtion to brows, choose, and have to your</br>
         pleace door!
         </p>
+        <hr>
 </div>
 
-<div class="row row-flex">
+<div class="row row-flex main-products-background">
     {% for product in products %}
         <div class="col-sm-12 col-md-6 col-lg-4">
              <a href='/products/{{ product.slug }}'>
-                <div class="card card-body">
+                <div class="card card-body mt-5 mb-5 mr-4 ml-4">
                     <div class="card-img-top product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <h5 class="card-title text-uppercase">{{ product.name }}</h5>
                         <p class="card-text">${{ product.price }}</p>
                 </div>
              </a>
         </div>
      {% endfor %}
 </div>
-<hr><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'more_products' %}">More Products <span class="sr-only">(current)</span></a></hr>
+<div class="text-center mt-5 mb-5">
+    <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}">See More Products <span class="sr-only">(current)</span></a>
+</div>
+<hr class="mt-5 mb-5"></hr>
+<div class="container text-center mt-5 mb-5 about_us">
+        <p class="alert alert-dark">Thank you for visiting iShop!</p>
+</div>
 {% endblock %}

@@ -6,15 +6,26 @@
 
 {% block page_title %}Registration Page{% endblock %} 
  
-{% block page_heading %}Please Register here!{% endblock %}
-
 {% block content %}
-<p>If you already have an account, please <a href="{% url 'login' %}">sign in</a></p>
-
-<form method="POST">
-        {% csrf_token %}
-        {{ registration_form | as_bootstrap}}
-        <input class="btn btn-primary" type="submit" value="Submit">
-    </form>
-
+<div class="background-img">
+    <div class="d-flex">
+        <div class="row m-auto">
+            <div class="card card-signin my-5 col-sm-12">
+                <div class="card-body mt-4">
+                    <div class="col-sm-12">
+                        <h5 class="card-title text-center text-uppercase mt-3 mb-3 text-danger">Register</h5>
+                        <p>If you already have an account, please <a class="text-primary text-uppercase" href="{% url 'login' %}">sign in!</a></p>
+                        <form method="POST">
+                                {% csrf_token %}
+                                {{ registration_form | as_bootstrap}}
+                                <div class="text-center">
+                                    <input class="btn btn-outline-info text-uppercase mt-3 mb-3" type="submit" value="Submit">
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

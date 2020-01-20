@@ -63,7 +63,7 @@
             {% endblock %}
         </h1>
     {% if messages %}
-    <div>
+    <div class="alert alert-primary">
         {% for message in messages %} 
             {{ message }} 
         {% endfor %}
@@ -84,25 +84,17 @@
             <div class="footer-pad">
             <h4>Popular Links</h4>
             <ul class="list-unstyled">
-                <li><a href="#"></a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">All Products</a></li>
+                <li><a href="{% url 'more_products' %}">All Products</a></li>
             </ul>
             </div>
         </div>
         <div class="col-md-4 col-sm-6">
             <!--Column1-->
             <div class="footer-pad">
-            <h4>Support</h4>
-            <ul class="list-unstyled">
-                <li><a href="#">Contct US</a></li>
-                <li><a href="#">Complain</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li>
-                <a href="#"></a>
-                </li>
-            </ul>
+                <h4>Support</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#">Contct US</a></li>
+                </ul>
             </div>
         </div>
             <div class="col-md-4">

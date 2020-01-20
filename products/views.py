@@ -15,8 +15,3 @@ def more_products(request):
 def product_view(request, slug):
     product = Product.objects.get(slug=slug)
     return render(request, "product_view.html", {"product": product})
-
-
-
-
-    

@@ -10,7 +10,7 @@
 
     <!-- Name -->
     <div class="row">
-        <div class="col-sm-12 col-md-12 align-items-center mt-5">
+        <div class="col-sm-12 col-md-12 align-items-center mt-5 text-uppercase">
          <h3>{{ product.name }}</h3>
         </div>
     </div>
@@ -29,6 +29,7 @@
         </div>
     </div>
     <hr>
+    
      <!-- Qty, and add to cart -->
     <div class="row">
         <div class="col-sm-10 col-md-6 col-lg-4 align-items-left mb-5">
@@ -50,6 +51,9 @@
             <p><strong>Description</strong> <br>{{ product.description }}</p>
         </div>
     </div>
-
-<hr><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'products' %}">Go Back <span class="sr-only">(current)</span></a></hr>
+<hr>
+<div class=" mt-5 mb-5">
+    <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}">browse more<span class="sr-only">(current)</span></a>
+</div>
+</hr>
 {% endblock %}

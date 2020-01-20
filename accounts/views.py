@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
-#  views here.
 def index(request):
     """Return the index.html file"""
     return render(request, 'index.html')
@@ -14,7 +13,7 @@ def index(request):
 def logout(request):
     """Log the user out"""
     auth.logout(request)
-    messages.success(request, "You have sucessfully logged out! Hope to see back soon")
+    messages.success(request, "You have sucessfully logged out!")
     return redirect(reverse('index'))
 
 
@@ -32,7 +31,7 @@ def login(request):
 
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "welocme back, you have successfully logged in!")
+                messages.success(request, "You have successfully logged in!")
                 return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Sorry, your username or password is incorrect")

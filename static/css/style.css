@@ -1,7 +1,14 @@
 body {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     margin: auto;
+}
+
+a {
+    color: #000;
+}
+a:link {
+  text-decoration: none;
 }
 .h1{
     margin: 0;
@@ -10,6 +17,11 @@ body {
 .card {
     border-radius: border;
     margin: 0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 /* cart count */
 .badge {
@@ -18,6 +30,12 @@ body {
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 50px;
+}
+
+/* red line */
+.red-line {
+    width: 5em;
+    border: 1px solid rgb(220, 53, 69);
 }
 
 /*-------------------------------------------- buttons */
@@ -41,6 +59,14 @@ body {
   position: relative;
   margin: 0 auto 40px;
 }
+.background-img {
+  width: 100%;
+  height: 80%;
+  background-image: url('../../static/images/tech.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+}
 
 .product-image {
     background-size: contain;
@@ -59,6 +85,16 @@ body {
     margin: 0 auto;
 }
 
+ /*-------------------------------------------- Login form */
+ .form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
 /*-------------------------------------------- footer */
 /* Footer: Credit to Namiq Namaz  */
 footer {
@@ -67,7 +103,6 @@ footer {
   background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
   background: linear-gradient(59deg, #3A6073, #16222A);
   color: white;
-  margin:100px auto 0;
 }
 
 footer a {
@@ -177,8 +212,5 @@ ul.social-network li {
 /*--------------------------------------------Media Queries*/
 
 @media(min-width: 992px) {
-  body {
-    max-width: 1100px;
-    margin: auto;
-  }
+
 }
