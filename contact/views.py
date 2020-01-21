@@ -1,6 +1,7 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 from .forms import ContactForm
 import os
 
@@ -27,4 +28,5 @@ def emailView(request):
 
 
 def successView(request):
-    return HttpResponse('Success! Thank you for your message.')
+    messages.error(request, "Success! Thank you for your message.")
+    return redirect(reverse('products'))
