@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<!-- templates/email.html -->
+<div class="background-img">
+    <div class="d-flex justify-content-start align-items-center">
+        <div class="row m-auto">
+            <div class="card mt-2 col-sm-12">
+                    <div class="col-sm-12">
+                        <h1 class="card-title text-center text-uppercase mt-3 mb-3 text-danger">Contact Us</h1>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form | as_bootstrap}}
+                            <div class="form-actions">
+                            <button type="submit" class="btn btn-info text-uppercase mt-3 mb-1">Send</button>
+                            </div>
+                        </form>
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
