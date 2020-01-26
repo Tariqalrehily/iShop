@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}iShop{% endblock %}
+
+{% block content %}
+<div class="mt-5 text-danger text-capitalize text-center">
+    <h1>your search results</h1>
+</div>
+<hr class="red-line">
+{% if products %}
+    <div class="row row-flex main-products-background">
+        {% for product in products %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <a href='/products/{{ product.slug }}'>
+                    <div class="card card-body mt-5 mb-5 mr-4 ml-4">
+                        <div class="card-img-top product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+                            <h5 class="card-title text-uppercase">{{ product.name }}</h5>
+                            <p class="card-text fa fa-dollar">{{ product.price }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No product macth your search.</p>
+{% endif %}
+<hr>
+<div class="text-center mt-5 mb-5">
+    <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i> our Products</a>
+</div>
+{% endblock %}

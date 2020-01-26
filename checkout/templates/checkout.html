@@ -18,52 +18,56 @@
 {% endblock %}
 
 {% block content %}
-<div class="mt-5 text-danger text-capitalize">
-    <h1>your order summary</h1>
-</div>
-<div class="row row-flex">
-    <table class="table mt-5">
-  <thead class="btn-secondary mt-3 mb-3">
-    <tr>
-      <th scope="col">Product</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-    </tr>
-  </thead>
-  {% for item in cart_items %}
-  <tbody>
-    <tr>
-      <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
-      <td>{{ item.product.name }}</td>
-      <td>${{ item.product.price }}</td>
-      <td>{{item.quantity}}</td>
-    </tr>
-  </tbody>
-  {% endfor %}
-</table>
-</div>
-<hr>
-<div class="row alert alert-warning">
-    <strong><p>Total:<span aria-hidden="true"></span>${{ total }}</p></strong>
-</div>
-    <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-        <legend class="text-capitalize mt-5 mb-3">payment details</legend>
+<div class="row row-flex justify-content-center">
+    <div class="mt-5 col-sm-12 col-md-10 col-lg-10 align-items-center">
+        <div class="text-danger text-capitalize">
+            <h1>your order summary</h1>
+        </div>
+        <div class="row row-flex">
+            <table class="table mt-5">
+        <thead class="btn-secondary mt-3 mb-3">
+            <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        {% for item in cart_items %}
+        <tbody>
+            <tr>
+            <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
+            <td>{{ item.product.name }}</td>
+            <td>${{ item.product.price }}</td>
+            <td>{{item.quantity}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        </table>
+        </div>
+        <hr>
+        <div class="row alert alert-warning">
+            <strong><p>Total:<span aria-hidden="true"></span>${{ total }}</p></strong>
+        </div>
+            <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+                <legend class="text-capitalize mt-5 mb-3">payment details</legend>
 
-        <div id="credit-card-errors" style="display: none;">
-            <div id="alert-message block-message error" id="stripe-error-message"></div>
-        </div>
-        <div class="row">
-        <div class="form-group col-sm-10 col-md-8 col-lg-6">
-            {{ order_form | as_bootstrap }}
-        </div>
-        <div class="form-group ol-sm-10 col-md-8 col-lg-6">
-            {{ payment_form | as_bootstrap }}
-        </div>
-        </div>
-        {% csrf_token %}
-        <div class="form-group col-md-12 mt-3 mb-5">
-            <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-        </div>
-    </form>
+                <div id="credit-card-errors" style="display: none;">
+                    <div id="alert-message block-message error" id="stripe-error-message"></div>
+                </div>
+                <div class="row">
+                <div class="form-group col-sm-10 col-md-8 col-lg-6">
+                    {{ order_form | as_bootstrap }}
+                </div>
+                <div class="form-group ol-sm-10 col-md-8 col-lg-6">
+                    {{ payment_form | as_bootstrap }}
+                </div>
+                </div>
+                {% csrf_token %}
+                <div class="form-group col-md-12 mt-3 mb-5">
+                    <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                </div>
+            </form>
+    </div>
+</div>
 {% endblock %}

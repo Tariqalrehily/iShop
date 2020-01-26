@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-# import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8080-c64d558e-44db-4757-9773-80f00ca08887.ws-eu01.gitpod.io',
                 'ishop-tar.herokuapp.com']
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'checkout',
     'storages',
     'contact',
+    'review',
 ]
 
 MIDDLEWARE = [
@@ -117,13 +117,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PORT = 587
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

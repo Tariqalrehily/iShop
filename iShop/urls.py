@@ -20,6 +20,7 @@ from products import urls as urls_products
 from cart import urls as urls_cart
 from search import urls as urls_search
 from contact import urls as urls_contact
+from review import urls as urls_review
 from checkout import urls as urls_checkout
 from products.views import products
 from django.views import static
@@ -33,6 +34,8 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^search/', include(urls_search)),
+    url(r'^review/', include(urls_review)),
     url(r'^contact/', include(urls_contact)),
+
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]

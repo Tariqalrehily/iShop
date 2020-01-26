@@ -12,18 +12,16 @@
         <div class="row m-auto">
             <div class="card card-signin my-5 col-sm-12">
                 <div class="card-body mt-4">
-                    <div class="col-sm-12">
-                        <h5 class="card-title text-center text-uppercase mt-3 mb-3 text-danger">Sign In</h5>
-                        <form class="form-signin" method="POST">
-                            {% csrf_token %}
-                            <p>You must login to view your cart!</p>
-                            {{ login_form | as_bootstrap}}
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-outline-info text-uppercase mt-3 mb-3">Login</button>
-                            </div>
-                        </form>
-                        <p class="mb-4"><a class="text-primary" href="{% url 'password_reset' %}">Forgot Password!</a></p>
-                    </div>
+                    <h5 class="card-title text-center text-uppercase mt-3 mb-3 text-danger">Sign In</h5>
+                    <form class="form-signin" method="POST">
+                        {% csrf_token %}
+                        <p>You must login to view your cart or to add a review!</p>
+                        {{ login_form | as_bootstrap}}
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-info text-uppercase mt-3 mb-3">Login</button>
+                        </div>
+                    </form>
+                    <p class="mb-4"><a class="text-primary" href="{% url 'password_reset' %}">Forgot Password!</a></p>
                 </div>
             </div>
         </div>

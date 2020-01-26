@@ -5,14 +5,15 @@
 {% block content %}
 <div class="img"></div>
 <!-- About  -->
-<div class="container text-center mt-5 mb-5 about_us">
-        <p">iShop over vierty of tech products such as phone, labtops, and watches.</br>
-        iShop is an online shop gives you the obtion to brows, choose, and have to your</br>
-        pleace door!
+<div class="row">
+    <div class="container col-sm-12 col-md-10 col-lg-8 text-center text-justify text-break my-5 py-5 font-weight-bolder alert alert-dark about_us">
+        <p>iShop is an online mobile store. Offer various phones products.
+        Browse our store for the phone you like, add it to your cart, and we will make
+        the delivery within 2 to 3 weeks after making the pyment. 
         </p>
-        <hr>
+    </div>
 </div>
-
+<hr class="my-5">
 <div class="row row-flex main-products-background">
     {% for product in products %}
         <div class="col-sm-12 col-md-6 col-lg-4">
@@ -20,17 +21,17 @@
                 <div class="card card-body mt-5 mb-5 mr-4 ml-4">
                     <div class="card-img-top product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
                         <h5 class="card-title text-uppercase">{{ product.name }}</h5>
-                        <p class="card-text">${{ product.price }}</p>
+                        <p class="card-text fa fa-dollar">{{ product.price }}</p>
                 </div>
              </a>
         </div>
      {% endfor %}
 </div>
 <div class="text-center mt-5 mb-5">
-    <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}">See More Products <span class="sr-only">(current)</span></a>
+    <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i>See More Products</a>
 </div>
 <hr class="mt-5 mb-5"></hr>
-<div class="container text-center mt-5 mb-5 about_us">
+<div class="container text-center mt-5 mb-5">
         <p class="alert alert-dark">Thank you for visiting iShop!</p>
 </div>
 {% endblock %}

@@ -8,49 +8,58 @@
 
 <!-- cart content -->
 {% block content %}
-<div class="mt-5 text-danger text-capitalize">
-    <h1>your shopping list</h1>
+<div class="row row-flex justify-content-center">
+    <div class="mt-5 col-sm-12 col-md-10 col-lg-10 align-items-center">
+        <div class="text-danger text-capitalize">
+            <h1>your shopping list</h1>
+         </div>
+            <table class="table mt-5">
+                <thead class="btn-secondary mt-3 mb-3">
+                    <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Change Quantity</th>
+                    </tr>
+                </thead>
+                {% if cart_items %}
+                {% for item in cart_items %}
+                <tbody>
+                    <tr>
+                    <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
+                    <td>{{ item.product.name }}</td>
+                    <td>${{ item.product.price }}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>
+                        <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="sr-only">New Quantity</label>
+                                <div class="input-group m-1">
+                                    <input name="quantity" type="number" min="0" max="50" class="form-control mr-3" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i>Amend</button>
+                        </form>
+                    </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            {% else %}
+                <p class="mt-3">No items are in your Cart!</p>
+            {% endif %}
+        </table>
+        <hr class="mt-5">
+        <!-- Checkout -->
+        <div>
+            <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i>continue shopping </a>
+        </div>
+        <div class="row mt-5 mb-5">
+            <p>Total: <span class="fa fa-dollar" aria-hidden="true"></span>{{ total }}</p><br><hr>
+            <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><i class="fa fa-check mr-1"></i></span>Checkout</a>
+        </div>
+    </div>
 </div>
-<div class="row row-flex">
-    <table class="table mt-5">
-  <thead class="btn-secondary mt-3 mb-3">
-    <tr>
-      <th scope="col">Product</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Change Quantity</th>
-    </tr>
-  </thead>
-  {% for item in cart_items %}
-  <tbody>
-    <tr>
-      <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
-      <td>{{ item.product.name }}</td>
-      <td>${{ item.product.price }}</td>
-      <td>{{item.quantity}}</td>
-      <td>
-        <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
-            {% csrf_token %}
-            <div class="form-group">
-                <label class="sr-only">New Quantity</label>
-                <div class="input-group">
-                    <input name="quantity" type="number" min="0" max="50" class="form-control mr-3">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-secondary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
-        </form>
-      </td>
-    </tr>
-  </tbody>
-  {% endfor %}
-</table>
-    
-</div>
-<hr class="mt-5">
-<!-- Checkout -->
-<div class="row mt-5 mb-5">
-    <p>Total: <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>${{ total }}</p><br><hr>
-    <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><span class="fn fn-ok-sign" aria-hidden="true"></span>Checkout</a></br></hr>
-{% endblock %}
-</div>
+    {% endblock %}
+ 

@@ -1,19 +1,27 @@
+/*-------------------------------------------- General */
+
 body {
     width: 100%;
-    min-height: 100%;
-    margin: auto;
+}
+/* To push footer at the bottom of the page
+header height is 56px and footer height is 211px */
+.main-content {
+    min-height: calc(100vh - (56px + 211px));
 }
 
 a {
     color: #000;
 }
+
 a:link {
   text-decoration: none;
 }
+
 .h1{
     margin: 0;
 }
-/* card */
+
+/*-------------------------------------------- Card */
 .card {
     border-radius: border;
     margin: 0.5em;
@@ -32,10 +40,15 @@ a:link {
     border-radius: 50px;
 }
 
-/* red line */
+/*-------------------------------------------- Read line */
 .red-line {
     width: 5em;
     border: 1px solid rgb(220, 53, 69);
+}
+
+/*-------------------------------------------- Icons */
+.fa-shopping-cart {
+    font-size: 24px;
 }
 
 /*-------------------------------------------- buttons */
@@ -97,21 +110,21 @@ a:link {
 
 /*-------------------------------------------- footer */
 /* Footer: Credit to Namiq Namaz  */
-footer {
-  padding-top: 20px;
+#footer {
   background: #16222A;
   background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
   background: linear-gradient(59deg, #3A6073, #16222A);
   color: white;
+  margin-top: auto;
 }
 
-footer a {
+#footer a {
   color: #fff;
   font-size: 14px;
   transition-duration: 0.2s;
 }
 
-footer a:hover {
+#footer a:hover {
   color: #FA944B;
   text-decoration: none;
 }
@@ -147,7 +160,7 @@ ul.social-network li {
 /* footer social icons */
 
 .social-network a.icoTwitter:hover {
-  background-color: #3B5998;
+  background-color: rgb(92, 133, 223);
 }
 
 .social-network a.icoLinkedin:hover {
