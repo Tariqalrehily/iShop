@@ -13,7 +13,7 @@
 <body>
 <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="{% url 'products' %}">iShop</a>
+        <a class="navbar-brand active" href="{% url 'products' %}">iShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,8 +21,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             <!-- Home  -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'more_products' %}">Products <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'more_products' %}">Products</a>
             </li>
             <!-- if user is logged in show Profile and logout-->
             {% if user.is_authenticated %}
@@ -69,7 +69,7 @@
         {% endfor %}
     </div>
     {% endif %} 
-    <div class="container-fluid">
+    <div class="container-fluid main-content">
     {% block content %}
     <!-- main area for iShop project -->
     {% endblock %}

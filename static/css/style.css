@@ -1,12 +1,10 @@
 /*-------------------------------------------- General */
 
-body {
-    width: 100%;
-}
 /* To push footer at the bottom of the page
 header height is 56px and footer height is 211px */
 .main-content {
     min-height: calc(100vh - (56px + 211px));
+    width: 100%;
 }
 
 a {
@@ -70,16 +68,14 @@ a:link {
   background-size: cover;
   background-position: center;
   position: relative;
-  margin: 0 auto 40px;
+  margin: 0 auto 3em;
 }
 
 .background-img {
   width: 100%;
-  height: 80%;
   background-image: url('../../static/images/tech.jpg');
   background-size: cover;
   background-position: center;
-  margin: 0;
 }
 
 .product-image {
@@ -116,7 +112,6 @@ a:link {
   background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
   background: linear-gradient(59deg, #3A6073, #16222A);
   color: white;
-  margin-top: auto;
 }
 
 #footer a {
@@ -226,5 +221,7 @@ ul.social-network li {
 /*--------------------------------------------Media Queries*/
 
 @media(min-width: 992px) {
-
+    .main-content {
+    width: 80%;
+    }
 }

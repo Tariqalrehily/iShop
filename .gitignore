@@ -1,6 +1,16 @@
 *.sqlite3
-env.py
 __pycache__
 *.png
+env.py
 static/
 media/
+*.pyc
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
