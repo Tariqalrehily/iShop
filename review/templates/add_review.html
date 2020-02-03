@@ -6,25 +6,25 @@
 
 {% block content %}
 
-<!-- templates/email.html -->
+<!-- Add review form -->
 <div class="mt-5 text-danger text-capitalize text-center">
     <h1>Add your review</h1>
 </div>
 <hr class="red-line">
-<div class="d-flex justify-content-start align-items-center my-5">
+<div class="d-flex justify-content-start align-items-center">
     <div class="row m-auto">
-        <div class="col-sm-12">
-            <form method="post">
-                {% csrf_token %}
-                {{ form | as_bootstrap}}
-                <div class="mb-2 font-weight-lighter text-muted">
-                    <p>You won't be able to edit or delete your review once added!</p>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-info text-capitalize mt-3 mb-1 py-2 px-5">Add</button>
-                </div>
-            </form>
-        </div>
+            <div class="card col-sm-12 alert alert-dark mb-5">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap}}
+                    <div class="mb-2 font-weight-lighter text-muted">
+                        <p>You won't be able to edit or delete your review once added!</p>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-info text-capitalize mt-3 mb-1 py-2 px-5">Add</button>
+                    </div>
+                </form>
+            </div>
     </div>
 </div>
 {% endblock %}

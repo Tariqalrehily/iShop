@@ -7,7 +7,7 @@
 {% block title %}checkout{% endblock %}
 
 {% block head_js %}
-
+<!-- to load strip script -->
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
     //<![CDATA[
@@ -18,6 +18,7 @@
 {% endblock %}
 
 {% block content %}
+<!-- Order summary page in checkout -->
 <div class="row row-flex justify-content-center">
     <div class="mt-5 col-sm-12 col-md-10 col-lg-10 align-items-center">
         <div class="text-danger text-capitalize">
@@ -33,6 +34,7 @@
             <th scope="col">Quantity</th>
             </tr>
         </thead>
+        <!-- Disply products -->
         {% for item in cart_items %}
         <tbody>
             <tr>
@@ -46,9 +48,11 @@
         </table>
         </div>
         <hr>
+        <!-- Totoal amount -->
         <div class="row alert alert-warning">
             <strong><p>Total:<span aria-hidden="true"></span>${{ total }}</p></strong>
         </div>
+        <!-- Payment form -->
             <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
                 <legend class="text-capitalize mt-5 mb-3">payment details</legend>
 

@@ -9,13 +9,15 @@
         <h1>What pepole say about us</h1>
     </div>
     <hr class="red-line">
+    <!-- add a review -->
     <div class="text-center mt-5 mb-5">
-        <a class="btn bg-success text-light my-2 my-sm-0 text-uppercase " href="{% url 'add_review' %}">add review <span class="sr-only">(current)</span></a>
+        <a class="btn bg-success text-light my-2 my-sm-0 text-uppercase " href="{% url 'add_review' %}">add review</a>
     </div>
     <hr>
-    {% if latest_review_list %}
+    <!-- review list -->
+    {% if reviews %}
     <div>
-        {% for review in latest_review_list %}
+        {% for review in reviews.object_list %}
         <div class="mt-5 card px-5 py-3 bg-light">
             <h1 class="text-capitalize"><strong>{{ review.user_name }}</strong></h1>
             </a>
@@ -31,4 +33,22 @@
     {% endif %}
     </div>
 </div>
+<!-- pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if reviews.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ reviews.previous_page_number}} ">Previous</a></li>
+        {% endif %}
+        {% for pg in reviews.paginator.page_range %}
+            {% if reviews.number == pg %}
+                <li class="page-item active"><a class="page-link" href="?page={{ pg }}">{{ pg }}</a></li>
+            {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{pg}}">{{pg}}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if reviews.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{reviews.next_page_number}}">Next</a></li>
+        {% endif %}
+    </ul>
+</nav>
 {% endblock %}

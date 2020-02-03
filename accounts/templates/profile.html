@@ -5,26 +5,29 @@
 {% block page_title %}{{ user }}'s Profile{% endblock %} 
 
 {% block content %}
-
-<div class="background-img">
+<!-- Profile page -->
+<div class="alert alert-info">
     <div class="d-flex">
         <div class="row m-auto">
-            <div class="card card-signin my-5 col-sm-12">
-                <div class="card-body mt-4">
-                    <div class="col-sm-12">
-                        <h1 class="card-title text-center text-capitalize mt-3 mb-3 text-danger">{{ user }}'s Profile</h1>
-                        <p>Hi! {{ profile.username }}</p>
-                        <p>Your Email address: {{ profile.email }}</p>
-                        <hr class="mt-3 mb-3">
-                        <div>
-                            <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'logout' %}">Logout</a>
-                            <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}">See Our Products </a>
-                        </div>
+            <div class="my-5 col-sm-12">
+                <div class="col-sm-12">
+                    <h1 class="text-center text-capitalize mt-5 mb-3 text-danger alert alert-info">{{ user }}'s Profile</h1>
+                    <p class="text-capitalize mt-5 mb-2">Hi! {{ profile.username }}</p>
+                    <p class="mt-3 mb-5">Your Email address: {{ profile.email }}</p>
+                    <hr class="mt-3 mb-5">
+                    <!-- Usuful links for the user -->
+                    <div class="mb-2 profile-items">
+                        <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'logout' %}">Logout</a>
+                        <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}">Products</a>
+                        <a class="btn btn-secondary my-2 my-sm-0 text-uppercase" href="{% url 'email' %}">Contact Us </a>
+                        <a class="btn btn-light my-2 my-sm-0 text-uppercase" href="{% url 'products' %}">home page</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container text-center mt-5 mb-5">
+        <p class="bg-dark text-white py-3">Thank you for being with iShop!</p>
+    </div>
 </div>
-
 {% endblock %}

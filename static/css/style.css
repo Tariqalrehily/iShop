@@ -27,7 +27,7 @@ a:link {
     transition: 0.3s;
 }
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 /* cart count */
 .badge {
@@ -47,6 +47,13 @@ a:link {
 /*-------------------------------------------- Icons */
 .fa-shopping-cart {
     font-size: 24px;
+}
+
+.fa-mobile, 
+.fa-plus,
+.fa-truck {
+    font-size: 34px;
+    color: rgb(128, 60, 12);
 }
 
 /*-------------------------------------------- buttons */
@@ -71,13 +78,6 @@ a:link {
   margin: 0 auto 3em;
 }
 
-.background-img {
-  width: 100%;
-  background-image: url('../../static/images/tech.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
 .product-image {
     background-size: contain;
     background-position: center center;
@@ -97,12 +97,12 @@ a:link {
 
  /*-------------------------------------------- Login form */
  .form-signin .btn {
-  font-size: 80%;
-  border-radius: 5rem;
-  letter-spacing: .1rem;
-  font-weight: bold;
-  padding: 1rem;
-  transition: all 0.2s;
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
 }
 
 /*-------------------------------------------- footer */
@@ -136,8 +136,6 @@ a:link {
   color: white;
 }
 
-/*SOCİAL İCONS*/
-
 /* footer social icons */
 
 ul.social-network {
@@ -151,9 +149,6 @@ ul.social-network li {
   display: inline;
   margin: 0 5px;
 }
-
-
-/* footer social icons */
 
 .social-network a.icoTwitter:hover {
   background-color: rgb(92, 133, 223);

@@ -6,11 +6,29 @@ from django.contrib import messages
 from .models import Review
 from .forms import ReviewForm
 import datetime
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
 
 def reviews_list(request):
-    latest_review_list = Review.objects.order_by('-pub_date')
-    context = {'latest_review_list':latest_review_list}
+    """
+    Review list to disply 5 in each page
+    Credit to : GoDjango
+    """
+    reviews = Review.objects.all().order_by('-pub_date')
+
+    paginater = Paginator(reviews, 5)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+
+    try:
+        reviews = paginater.page(page)
+    except(EmptyPage, InvalidPage):
+        reviews = paginater.page(paginater.num_pages)
+
+    context = {'reviews': reviews}
     return render(request, 'reviews_list.html', context)
 
 
@@ -29,7 +47,7 @@ def add_review(request):
         if review.save:
             review.save()
             messages.error(request, "Success! Thank you for your review!.")
-            return HttpResponseRedirect(reverse('products'))
+            return HttpResponseRedirect(reverse("products"))
         """
         return an HttpResponseRedirect after successfully dealing
         with POST data. This prevents data from being posted twice if a

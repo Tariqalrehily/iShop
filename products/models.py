@@ -6,6 +6,8 @@ class Product(models.Model):
     description = models.TextField(default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
+    brand = models.CharField(max_length=200, default='')
+    year = models.IntegerField(default='')
     slug = models.SlugField(unique=True)
 
     def __str__(self):

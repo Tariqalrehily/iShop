@@ -22,7 +22,7 @@
             <ul class="navbar-nav mr-auto">
             <!-- Home  -->
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'more_products' %}">Products</a>
+                <a class="nav-link" href="{% url 'more_products' %}"><i class="fa fa-mobile  mr-1"></i>Products</a>
             </li>
             <!-- if user is logged in show Profile and logout-->
             {% if user.is_authenticated %}
@@ -46,14 +46,18 @@
             </li>
             </ul>
             <!-- Search -->
-            <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
+            <div class="row">
+            <form class="form-inline my-lg-0 justify-content-end" action="{% url 'search' %}" method="GET">
+                <input class="form-control mb-1 col-lg-3 mr-sm-2" type="search" placeholder="Name" name="q">
+                <input class="form-control mb-1 col-lg-3 mr-sm-2" type="search" placeholder="Brand" name="brand"/>
+                <input class="form-control mb-1 col-lg-2 mr-sm-2" type="search" placeholder="Year" name="year"/>
+                <button class="btn btn-outline-success mr-3" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
             </form>
+            </div>
             <!-- Cart -->
             <div class="ml-2 mr-2">
                 <a href="{% url 'view_cart' %}">
-                    <i class="fa fa-shopping-cart">
+                    <i class="fa fa-shopping-cart ml-0">
                     {% if product_count > 0 %}
                      <label class="badge badge-warning">{{ product_count }}</label>
                     {% endif %}
@@ -80,7 +84,7 @@
     <div class="container mt-auto">
         <div class="row">
         <div class="col-md-4 col-sm-6">
-            <!--Column1-->
+            <!--Footer column1-->
             <div class="footer-pad">
             <h4>Popular Links</h4>
             <ul class="list-unstyled">
@@ -90,7 +94,7 @@
             </div>
         </div>
         <div class="col-md-4 col-sm-6">
-            <!--Column1-->
+            <!--Footer column2-->
             <div class="footer-pad">
                 <h4>Support</h4>
                 <ul class="list-unstyled">
@@ -99,6 +103,7 @@
             </div>
         </div>
             <div class="col-md-4">
+            <!--Footer column3 socil media-->
                 <h4>Follow Us</h4>
                 <ul class="social-network social-circle">
                 <li><a href="https://twitter.com/orly1100" class="icoTwitter" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
