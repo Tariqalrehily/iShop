@@ -1,10 +1,8 @@
 /*-------------------------------------------- General */
-
 /* To push footer at the bottom of the page
 header height is 56px and footer height is 211px */
 .main-content {
     min-height: calc(100vh - (56px + 211px));
-    width: 100%;
 }
 
 a {
@@ -17,6 +15,14 @@ a:link {
 
 .h1{
     margin: 0;
+}
+
+/*-------------------------------------------- Slider */
+.carousel-item img{
+    height: 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
 /*-------------------------------------------- Card */
@@ -49,15 +55,14 @@ a:link {
     font-size: 24px;
 }
 
-.fa-mobile, 
-.fa-plus,
-.fa-truck {
+.mobile-icon, 
+.plus-icon,
+.truck-icon {
     font-size: 34px;
     color: rgb(128, 60, 12);
 }
 
 /*-------------------------------------------- buttons */
-
 .addToCart{
     margin: 0.2em;
 }
@@ -67,17 +72,6 @@ a:link {
 }
 
 /*-------------------------------------------- images */
-
-.img{
-  width: 100%;
-  height: 50%;
-  background-image: url('../../static/images/tech.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin: 0 auto 3em;
-}
-
 .product-image {
     background-size: contain;
     background-position: center center;
@@ -211,12 +205,4 @@ ul.social-network li {
 
 .social-network a {
   background-color: #F9F9F9;
-}
-
-/*--------------------------------------------Media Queries*/
-
-@media(min-width: 992px) {
-    .main-content {
-    width: 80%;
-    }
 }

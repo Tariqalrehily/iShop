@@ -34,6 +34,9 @@ def reviews_list(request):
 
 @login_required()
 def add_review(request):
+    """
+    Allow user to add review 
+    """
     form = ReviewForm(request.POST)
     if form.is_valid():
         rating = form.cleaned_data['rating']
