@@ -23,14 +23,6 @@
       <img src="{% static "images/silver-iphone-x.jpg" %}" class="d-block w-100" alt="SlideImage3">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
 <!-- About  -->
 <div class="row">
@@ -52,13 +44,13 @@
 <div class="row row-flex main-products-background">
     {% for product in products %}
         <div class="col-sm-12 col-md-6 col-lg-4">
-             <a href='/products/{{ product.slug }}'>
+            <a href='/products/{{ product.slug }}'>
                 <div class="card card-body mt-5 mb-5 mr-4 ml-4">
                     <div class="card-img-top product-image mb-1" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
                         <h5 class="card-title text-uppercase">{{ product.name }}</h5>
                         <p class="card-text fa fa-dollar">{{ product.price }}</p>
                 </div>
-             </a>
+            </a>
         </div>
      {% endfor %}
 </div>

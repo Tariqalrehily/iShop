@@ -1,8 +1,11 @@
 /*-------------------------------------------- General */
 /* To push footer at the bottom of the page
 header height is 56px and footer height is 211px */
+
 .main-content {
     min-height: calc(100vh - (56px + 211px));
+    padding-left: 0;
+    padding-right: 0;
 }
 
 a {
