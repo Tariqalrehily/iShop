@@ -154,7 +154,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=94608000'
 }
 
-AWS_STORAGE_BUCKET_NAME = 'tar-ishop-2'
+AWS_STORAGE_BUCKET_NAME = 'tar-ishop-1'
 AWS_S3_REGION_NAME = 'eu-west-1'
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
