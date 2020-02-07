@@ -7,13 +7,24 @@
     <h1>your search results</h1>
 </div>
 <hr class="red-line">
+<!-- Filter -->
+<div class="row justify-content-center">
+    <form class="form-inline my-lg-0" action="{% url 'filter' %}" method="GET">
+        <p class="font-weight-bolder h5 mr-2">Search by</p>
+        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Name" name="q">
+        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Brand" name="brand"/>
+        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Year" name="year"/>
+        <button class="btn btn-dark mr-3" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
+    </form>
+</div>
+<hr></hr>
 <!-- Search results -->
 {% if products %}
     <div class="row row-flex main-products-background">
         {% for product in products %}
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="row row-flex justify-content-center">
-                    <div class="mt-5 col-sm-12 col-md-10 col-lg-10 align-items-center">
+                    <div class="mt-3 col-sm-12 col-md-10 col-lg-10 align-items-center">
                         <a href='/products/{{ product.slug }}'>
                             <div class="card card-body mt-5 mb-5 mr-4 ml-4">
                                 <div class="card-img-top product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
