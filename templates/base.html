@@ -48,13 +48,12 @@
             <div class="row">
             <form class="form-inline my-lg-0 justify-content-end" action="{% url 'search' %}" method="GET">
                 <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Search" name="q">
-                <button class="btn btn-outline-success mr-3" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
+                <button class="btn btn-outline-success mb-1 mr-3" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
             </form>
             </div>
-            <!-- Cart -->
             <div class="ml-2 mr-2">
                 <a href="{% url 'view_cart' %}">
-                    <i class="fa fa-shopping-cart ml-0">
+                    <i class="fa fa-shopping-cart shopping-cart-icon ml-0">
                     {% if product_count > 0 %}
                      <label class="badge badge-warning">{{ product_count }}</label>
                     {% endif %}

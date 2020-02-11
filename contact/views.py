@@ -28,5 +28,5 @@ def emailView(request):
 
 
 def successView(request):
-    messages.error(request, "Success! Thank you for your message.")
+    messages.error(request, "Success! Thank you for your message, we will get back to you shortly.")
     return redirect(reverse('products'))

@@ -17,10 +17,11 @@
                     <hr class="mt-3 mb-5">
                     <!-- useful links for the user -->
                     <div class="mb-2 profile-items">
-                        <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'logout' %}">Logout</a>
-                        <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}">Products</a>
-                        <a class="btn btn-secondary my-2 my-sm-0 text-uppercase" href="{% url 'email' %}">Contact Us </a>
-                        <a class="btn btn-light my-2 my-sm-0 text-uppercase" href="{% url 'products' %}">home page</a>
+                        <a class="btn btn-warning my-2 my-sm-0 text-uppercase" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart mr-1"></i> your Cart</a>
+                        <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-mobile  mr-1"></i>Products</a>
+                        <a class="btn btn-secondary my-2 my-sm-0 text-uppercase" href="{% url 'email' %}"><i class="fa fa-phone  mr-1"></i>Contact Us </a>
+                        <a class="btn btn-light my-2 my-sm-0 text-uppercase" href="{% url 'products' %}"><i class="fa fa-home mr-1"></i></i>home page</a>
+                        <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'logout' %}"><i class="fa fa-sign-out mr-1"></i>Logout</a>
                     </div>
                 </div>
             </div>

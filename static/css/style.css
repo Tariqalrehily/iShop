@@ -54,7 +54,7 @@ a:link {
 }
 
 /*-------------------------------------------- Icons */
-.fa-shopping-cart {
+.shopping-cart-icon {
     font-size: 24px;
 }
 
@@ -71,25 +71,17 @@ a:link {
 }
 
 .quantity {
-    margin: 0.2em 2em;
+    max-width: 200px
 }
 
 /*-------------------------------------------- images */
-.product-image {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-}
 .product-image-view {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
-    margin: 0 auto;
+    margin-left: 0;
 }
 
  /*-------------------------------------------- Login form */
@@ -100,6 +92,11 @@ a:link {
     font-weight: bold;
     padding: 1rem;
     transition: all 0.2s;
+}
+/*-------------------------------------------- Shooping list and order summary */
+table {
+    width: 100%;
+    margin: auto;
 }
 
 /*-------------------------------------------- footer */

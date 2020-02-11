@@ -16,7 +16,6 @@
     <div class="mt-5 mb-5">
         <div class="product-image-view" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
     </div>
-
 <!-- Price -->
     <div class="">
         <p><strong>Price: </strong><span class="fa fa-dollar"></span>{{ product.price }}</p>
@@ -28,7 +27,7 @@
     <form method="post" action="{% url 'add_to_cart' product.id %}">
         {% csrf_token %}
         <div class="input-group">
-            <input name="quantity" type="number" min="1" max="50" class="form-control quantity" placeholder="Qty" required>
+            <input name="quantity" type="number" min="1" max="50" class="form-control mr-4 mt-1 quantity" placeholder="Qty" required>
             <span class="input-group-btn">
                 <button class="btn btn-warning addToCart" type="submit"><i class="fa fa-plus mr-1"></i>Add To Cart</button>
             </span>

@@ -8,11 +8,12 @@
 
 <!-- cart content -->
 {% block content %}
-<div class="row row-flex justify-content-center">
-    <div class="mt-5 px-5 col-sm-12 col-md-10 col-lg-10 align-items-center">
-        <div class="text-danger text-capitalize">
-            <h1>your shopping list</h1>
-         </div>
+<div class="row justify-content-center">
+    <div class="text-danger text-capitalize mt-5">
+        <h1>your shopping list</h1>
+    </div>
+    <div class="mt-3 col-xs-12 col-sm-10">
+        <div class="table-responsive ">
             <table class="table mt-5">
                 <thead class="btn-secondary mt-3 mb-3">
                     <tr>
@@ -46,20 +47,23 @@
                     </tr>
                 </tbody>
                 {% endfor %}
-            {% else %}
-                <p class="mt-3">No items are in your Cart!</p>
-            {% endif %}
-        </table>
-        <hr class="mt-5">
-        <!-- Checkout -->
-        <div>
-            <a class="btn btn-success my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i>continue shopping </a>
-        </div>
-        <div class="row mt-5 mb-5">
-            <p>Total: <span class="fa fa-dollar" aria-hidden="true"></span>{{ total }}</p><br><hr>
-            <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><i class="fa fa-check mr-1"></i></span>Checkout</a>
-        </div>
+                {% else %}
+                    <p class="mt-3 pl-3">No items are in your Cart!</p>
+                {% endif %}
+            </table>
+        </div>    
     </div>
 </div>
-    {% endblock %}
+ <hr class="mt-5">
+ <div class="pl-4">
+    <a class="btn btn-success my-2 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i>continue shopping </a>
+</div>
+<!-- Checkout -->
+<div class="row my-5 pl-5">
+<div>
+    <p>Total: <span class="fa fa-dollar" aria-hidden="true"></span>{{ total }}</p>
+    <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><i class="fa fa-check mr-1"></i></span>Checkout</a>
+</div>  
+</div>
+{% endblock %}
  

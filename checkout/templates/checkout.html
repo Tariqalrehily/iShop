@@ -20,32 +20,34 @@
 {% block content %}
 <!-- Order summary page in checkout -->
 <div class="row row-flex justify-content-center">
-    <div class="mt-5 px-4 col-sm-12 col-md-10 col-lg-10 align-items-center">
-        <div class="text-danger text-capitalize">
-            <h1>your order summary</h1>
-        </div>
+    <div class="text-danger text-capitalize mt-5">
+        <h1>your order summary</h1>
+    </div>
+    <div class="mt-3 px-4 col-sm-12 col-md-10 col-lg-10">
         <div class="row row-flex">
-            <table class="table mt-5">
-        <thead class="btn-secondary mt-3 mb-3">
-            <tr>
-            <th scope="col">Product</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            </tr>
-        </thead>
-        <!-- Disply products -->
-        {% for item in cart_items %}
-        <tbody>
-            <tr>
-            <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
-            <td>{{ item.product.name }}</td>
-            <td>${{ item.product.price }}</td>
-            <td>{{item.quantity}}</td>
-            </tr>
-        </tbody>
-        {% endfor %}
-        </table>
+            <div class="table-responsive">
+                <table class="table mt-5">
+            <thead class="btn-secondary mt-3 mb-3">
+                <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <!-- Disply products -->
+            {% for item in cart_items %}
+            <tbody>
+                <tr>
+                <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
+                <td>{{ item.product.name }}</td>
+                <td>${{ item.product.price }}</td>
+                <td>{{item.quantity}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            </table>
+            </div>
         </div>
         <hr>
         <!-- Totoal amount -->

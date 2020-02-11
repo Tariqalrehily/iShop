@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'random_default_secret')
 # SECURITY WARNING: don't run with debug turned on in product
 
 DEBUG = False
-
+ 
 ALLOWED_HOSTS = ['8080-c64d558e-44db-4757-9773-80f00ca08887.ws-eu01.gitpod.io',
                 'ishop-tar.herokuapp.com']
 
@@ -122,8 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_HOST_USER = os.environ.get('EMAIL_ADDRESS')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -156,8 +156,8 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 AWS_STORAGE_BUCKET_NAME = 'tar-ishop-1'
 AWS_S3_REGION_NAME = 'eu-west-1'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_SECRET_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_DEFAULT_ACL = None
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME

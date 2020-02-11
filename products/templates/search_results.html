@@ -3,45 +3,42 @@
 {% block title %}iShop{% endblock %}
 
 {% block content %}
+<!-- Filter -->
+<div class="row justify-content-center">
+    <form class="form-inline px-4 mt-4" action="{% url 'filter' %}" method="GET">
+        <p class="font-weight-bolder h5 mr-2">New Search:</p>
+        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Name: iPhone" name="q">
+        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Brand: Apple" name="brand"/>
+        <input class="form-control mb-1 mr-sm-2" type="year" placeholder="Year: 2019" name="year"/>
+        <button class="btn btn-dark mr-3" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
+    </form>
+</div>
 <div class="mt-5 text-danger text-capitalize text-center">
     <h1>your search results</h1>
 </div>
 <hr class="red-line">
-<!-- Filter -->
-<div class="row justify-content-center">
-    <form class="form-inline my-lg-0" action="{% url 'filter' %}" method="GET">
-        <p class="font-weight-bolder h5 mr-2">Search by</p>
-        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Name" name="q">
-        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Brand" name="brand"/>
-        <input class="form-control mb-1 mr-sm-2" type="search" placeholder="Year" name="year"/>
-        <button class="btn btn-dark mr-3" type="submit"><i class="fa fa-search mr-1"></i>Search</button>
-    </form>
-</div>
 <hr></hr>
 <!-- Search results -->
 {% if products %}
     <div class="row row-flex main-products-background">
         {% for product in products %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="row row-flex justify-content-center">
-                    <div class="mt-3 col-sm-12 col-md-10 col-lg-10 align-items-center">
-                        <a href='/products/{{ product.slug }}'>
-                            <div class="card card-body mt-5 mb-5 mr-4 ml-4">
-                                <div class="card-img-top product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                                <h5 class="card-title text-uppercase">{{ product.name }}</h5>
-                                <p class="card-text fa fa-dollar">{{ product.price }}</p>
-                            </div>
-                        </a>
-                    </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="row row-flex justify-content-center">
+                <div class="mt-3 col-sm-12 col-md-10 col-lg-10 align-items-center">
+                    <a href='/products/{{ product.slug }}'>
+                        <div class="card card-body mt-5 mb-5 mr-4 ml-4">
+                            <div class="card-img-top product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+                            <h5 class="card-title text-uppercase">{{ product.name }}</h5>
+                            <p class="card-text fa fa-dollar">{{ product.price }}</p>
+                        </div>
+                    </a>
                 </div>
             </div>
+        </div>
         {% endfor %}
+        {% else %}
+            <p class="ml-5">No product macth your search.</p>
+        {% endif %}
+        <hr>
     </div>
-{% else %}
-    <p>No product macth your search.</p>
-{% endif %}
-<hr>
-<div class="text-center mt-5 mb-5">
-    <a class="btn btn-danger my-2 my-sm-0 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i> our Products</a>
-</div>
 {% endblock %}
