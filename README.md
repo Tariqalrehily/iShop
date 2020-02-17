@@ -47,12 +47,12 @@ visitor with clear idea of the propose of the site.
 
 ## Features:
 ### Existing Features:
-##### Navbar:
+#### Navbar:
 * Navbar features on all pages, with fixed in top.
 * Desktop view: On the left of the navbar, five links on pages are provided. iShop logo(Home page), Products to view all smartphones, Register and login if user is is not registered / or logged in, or Profile and logout if your is already logged in. Reviews linked to list of review page. On the right side in the navbar, search bar and cart are provided.
 * Tablet and Mobile view: iShop logo remains in the left, with burger menu on the right, dropdown display: Products, (Register and Login / or Profile and Logout), Reviews, search bar, and cart).
 
-##### Footer:
+#### Footer:
 * The footer features on all pages.
 * The footer include three parts:
 Part one: Popular Links: All Products and Reviews.
@@ -60,7 +60,7 @@ Part two: contact us, location and phone number.
 Part three: for user to follow us on Social media (Twitter and LinkedIn).
 * Copyright information for iShop.
 
-##### Home page (iShop):
+#### Home page (iShop):
 * Slider, include three slider as promotion images of smartphones.
 * Introduction and brief statement of iShop in one line.
 * Steps to start shopping with iShop.
@@ -68,32 +68,32 @@ Part three: for user to follow us on Social media (Twitter and LinkedIn).
 * Six exited smartphones and a link to view more / all products.
 * A thanks note for site visitor.
 
-##### Products:
+#### Products:
 * Products list up to nine products as card featured. Each Product has some basic information about the product, such as image, name include brand size and color. Also, at the bottom of the card a product price.
 * Pagination buttons are provided depending on results returned from the database. option are current page and number of pages, previous and next.
 
-##### View Product:
+#### View Product:
 * Each product has slug set to generate a valid url to view that product information.
 * Each product information include: Name, image, price, add to cart after selecting quantity (option 1 up to 50) user has to input a number that was done by set required field. 0 and less than 1 values won't be accepted, brand, year, and description.
 * At the bottom, link to browse more products provided to redirect user to all products page.
 
-##### Search page:
+#### Search page:
 * Page to include smartphones results from the search input.
 * At the top of the page: three search bar are provided as on the home page, for user to be able to start a new search.
 * Three virous search bars are provided to help user to find their wish smartphone, which are: by name, brand, year.
 * The three bars were placeholder by type of search and an example of search input.
 
-##### Reviews:
+#### Reviews:
 * At the top, add review link added to redirect user to add a review form.
 * list of existed reviews, each review include: user name, rating, date and time, and review content.
 * Pagination buttons are provided depending on results returned from the database. option are current page and number of pages, previous and next.
 
-##### Add Review:
+#### Add Review:
 * To add a review user needs to be registered. Not logged in users will be redirect to login page.
 * After logging in: user will be informed to enter user name (text), rating(select menu 1 to 5), and comment. By hit add button, review will be Added successfully.
 * A note for user attention that he / she will not be able to edit or delete review once added.  
 
-##### Cart:
+#### Cart:
 * User's shopping list display all items in cart as a table rows.
 * Each item has information as: photo, name, price, quantity and ability to amend current quantity.
 * Link to all products page if user wish to continue shopping.
@@ -101,7 +101,7 @@ Part three: for user to follow us on Social media (Twitter and LinkedIn).
 * Checkout button to redirect to checkout page.
 * If no item in user's cart, user will be informed by (No items are in your Cart!)
 
-##### Checkout:
+#### Checkout:
 * User's order summary list display as a table rows. each item include: photo, name, price, and quantity.
 * Total price of items.
 * Payment details form, for user to complete their parches.
@@ -109,24 +109,24 @@ Part three: for user to follow us on Social media (Twitter and LinkedIn).
 * message will be informing user if payment was successful or there an issue with payment at the top of the page.
 * User will be redirect to home page after successfully payment.
 
-##### User account pages:
+#### User account pages:
 * Register page: Include registration form, educate user to provide Email, username, password, password confirmation. Instructions on how to select the password provided the password field. Submit button.
 * Login page: Include login form, educate user to provide username, password. Instructions on why they need to login as provided on the sign in form. Forgot password link and Submit button. On the login form, user is educated that they will need to be logged in to view cart or add a review.
 * Profile page: Layout as User's Profile at the top of the page, below, Hi username, and user email. To ease the use for the user five links were provided: Cart, products, contact us, home page, and logout. Also, A thanks statement fro user being with iShop.
 * logout link at the in navbar or user's profile will logout user and informing them by a message at the top of the page.
 
-##### Password reset pages:
+#### Password reset pages:
 * Password reset form: inform user to enter their email address and hit reset, password button to start resetting password.
 * Password reset done page: inform user with a message that we have sent them an email with instructions for setting new password to the e-mail address that we have.
 * password reset email: send an email with password reset link and username in case user forgot.
 * Password reset confirm page: inform user to enter new password. New password and confirm password. Once user entered a valid password1 and password2(confirm), user can hit change password button to reset the password.
 * Password reset complete page: inform message that password has been set, and login link.
 
-##### Contact us page:
+#### Contact us page:
 * Contact us provided in the footer in all pages and as a link in user's profile page.
 * iShop users can contact us by filling contact us form, by providing name, email, subject, and message. Send button at the bottom of the page.
 
-## Features Left To Implement:
+### Features Left To Implement:
 1. Sending an email to customer with their shopping sumary and recipet, once order is placed. 
 2. Sending an acknowledgement email to user once they submitted a contact us form. 
 3. Onces the site has an acutl and availbe products, include Terms & Conditions page. 
@@ -162,7 +162,7 @@ town_or_city = models.CharField(max_length=40, blank=False)
 state = models.CharField(max_length=40, blank=False)
 date = models.DateField()
 ```
-5. Order model within checkout app:
+5. OrderLineItem model within checkout app:
 ```
 order = models.ForeignKey(Order, null=False)
 product = models.ForeignKey(Product, null=False)
@@ -217,9 +217,9 @@ Testing is in separate file and can be found [TESTING.md](https://github.com/Tar
 
 6.2 From gitpod terminal:
 * Run:
-  ```
-  git status
-  ```
+```
+git status
+```
 * Added the files and stage them for the commit, by:
 ```
 $ git add fileName
