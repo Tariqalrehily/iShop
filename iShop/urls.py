@@ -38,4 +38,4 @@ urlpatterns = [
     url(r'^contact/', include(urls_contact)),
 
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
-] 
+]

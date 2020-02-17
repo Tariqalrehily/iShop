@@ -41,7 +41,7 @@
                 <tr>
                 <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
                 <td>{{ item.product.name }}</td>
-                <td>${{ item.product.price }}</td>
+                <td class="fa fa-euro">{{ item.product.price }}</td>
                 <td>{{item.quantity}}</td>
                 </tr>
             </tbody>
@@ -52,7 +52,7 @@
         <hr>
         <!-- Totoal amount -->
         <div class="row alert alert-warning">
-            <strong><p>Total:<span aria-hidden="true"></span>${{ total }}</p></strong>
+            <strong><p>Total:<i class="fa fa-euro"></i>{{ total }}</p></strong>
         </div>
         <!-- Payment form -->
         <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">

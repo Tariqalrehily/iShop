@@ -64,7 +64,7 @@ a:link {
     color: rgb(128, 60, 12);
 }
 
-/*-------------------------------------------- buttons */
+/*-------------------------------------------- Buttons */
 .addToCart{
     margin: 0.2em;
 }
@@ -73,14 +73,38 @@ a:link {
     max-width: 200px
 }
 
-/*-------------------------------------------- images */
+/*-------------------------------------------- Images */
+
+.product-image {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
 .product-image-view {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
-    margin: 0 auto;
+}
+/* product image zoom in */
+.zoom {
+    width: 350px;
+    height: 200px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+ 
+.transition {
+    -webkit-transform: scale(2); 
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
 }
 
  /*-------------------------------------------- Login form */

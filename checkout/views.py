@@ -8,7 +8,6 @@ from django.utils import timezone
 from products.models import Product
 import stripe
 
-
 stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()

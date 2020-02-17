@@ -4,6 +4,11 @@
 
 {% load bootstrap_tags %}
 
+{% block zoomin_js %}
+<!-- to load zoomin script -->
+<script type="text/javascript" src="{% static 'js/image_zoomin.js' %}"></script>
+{% endblock %}
+
 <!-- product content -->
 {% block content %}
 <div class="row row-flex justify-content-center">
@@ -14,11 +19,11 @@
     </div>
 <!-- image -->
     <div class="mt-5 mb-5">
-        <div class="product-image-view" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+        <div class="zoom product-image-view" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
     </div>
 <!-- Price -->
-    <div class="">
-        <p><strong>Price: </strong><span class="fa fa-dollar"></span>{{ product.price }}</p>
+    <div>
+        <p><strong>Price: </strong><i class="fa fa-euro"></i>{{ product.price }}</p>
     </div>
 <hr>
 

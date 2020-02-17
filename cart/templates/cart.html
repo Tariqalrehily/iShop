@@ -19,7 +19,7 @@
                     <tr>
                     <th scope="col">Product</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Price</th>
+                    <th scope="col"><i class="fa fa-euro"></i>Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Change Quantity</th>
                     </tr>
@@ -30,7 +30,7 @@
                     <tr>
                     <td><div  class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
                     <td>{{ item.product.name }}</td>
-                    <td>${{ item.product.price }}</td>
+                    <td><i class="fa fa-euro"></i>{{ item.product.price }}</td>
                     <td>{{item.quantity}}</td>
                     <td>
                         <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
@@ -51,19 +51,20 @@
                     <p class="mt-3 pl-3">No items are in your Cart!</p>
                 {% endif %}
             </table>
-        </div>    
+        </div>  
+        <hr class="mt-5">
+        <div class="pl-4">
+            <a class="btn btn-success my-2 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i>continue shopping </a>
+        </div>
+        <!-- Checkout -->
+        <div class="row my-5 pl-5">
+        <div>
+            <p>Total: <i class="fa fa-euro"></i>{{ total }}</p>
+            <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><i class="fa fa-check mr-1"></i></span>Checkout</a>
+        </div>  
+        </div>  
     </div>
 </div>
- <hr class="mt-5">
- <div class="pl-4">
-    <a class="btn btn-success my-2 text-uppercase" href="{% url 'more_products' %}"><i class="fa fa-search-plus mr-1"></i>continue shopping </a>
-</div>
-<!-- Checkout -->
-<div class="row my-5 pl-5">
-<div>
-    <p>Total: <span class="fa fa-dollar" aria-hidden="true"></span>{{ total }}</p>
-    <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><i class="fa fa-check mr-1"></i></span>Checkout</a>
-</div>  
-</div>
+ 
 {% endblock %}
  
