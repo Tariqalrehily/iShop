@@ -211,7 +211,7 @@ Testing is in separate file and can be found [TESTING.md](https://github.com/Tar
 6. Two ways to commit and push changes to github:
 6.1 From gitpod bulid tools:
 * Naviagte to Git soucrce control
-* Stage ll changes
+* Stage all changes
 * Write a commit message in the input box on top left on gitpod IDE.
 * From the right menu push to github.
 
@@ -236,12 +236,12 @@ $ git push -u origin master
 * After, do this to commit and push my projects changes and keep my GitHub repository up to date.
 
 ### From Github:
-* To run the project locally:
-1. Install Pip, python3, and git on your local machine.
-2. Project required the following services, Create free accounts on: [AWS to set S3 bucket](https://aws.amazon.com/) and [Stripe](https://stripe.com/ie) as payment method to validate credit card payment.
-3. On GitHub, navigate to the main page of the repository.
+#### To run the project locally:
+* Install Pip, python3, and git on your local machine.
+* Project required the following services, Create free accounts on: [AWS to set S3 bucket](https://aws.amazon.com/) and [Stripe](https://stripe.com/ie) as payment method to validate credit card payment.
+* On GitHub, navigate to the main page of the repository.
 
-
+#### Instructions: 
 1. On GitHub, navigate to the main page of the [repository](https://github.com/Tariqalrehily/iShop).
 2. Under the repository name, click Clone or download.
 3. In the Clone with HTTPs section, click  to copy the clone URL for the repository.
@@ -256,8 +256,10 @@ git clone https://github.com/Tariqalrehily/iShop
 ```
 pip3 -r requirements.txt.
 ```
-9. Set environment variables in your Project / Application as follow:
+9. In your local IDE, set a file with environment variables in your Project / Application as follow:
 ```
+import os
+
 os.environ.setdefault("DATABASE_URL", "YOUR PostgreSQL URL")
 os.environ.setdefault("SECRET_KEY", " YOUR SECRET KEY")
 
@@ -272,6 +274,20 @@ os.environ.setdefault("EMAIL_PASSWORD", "YOUR EMAIL PASSWORD")
 
 ```
 If you are using .bashrc file please see [instruction](https://serverfault.com/questions/606/what-is-the-best-way-to-set-an-environment-variable-in-bashrc) on how to do so.
+
+10. Add your hostname under 'ALLOWED_HOSTS' in settings.py file.
+11. To migrate the admin panel model and create database template, you may do so by:
+```
+python3 manage.py migrate
+```
+To create superuser to access django admin panel and database: 
+```
+python3 manage.py createsuperuser
+```
+12. To run the application locally:
+```
+python3 manage.py runserver
+```
 
 ### To Heroku:
 1. Create requirements.txt file using:
@@ -305,7 +321,7 @@ If you are using .bashrc file please see [instruction](https://serverfault.com/q
 * Product (smartphones) information was taking from [Amazon](https://www.amazon.co.uk/s)
 
 ## Media:
-* The main three photo on slider:
+* The main three photos on slider:
 First photo: by [Tyler Lastovich](https://www.pexels.com/photo/black-iphone-7-on-brown-table-699122/)
 Second photo: by [Torsten Dettlaff](https://www.pexels.com/photo/space-gray-iphone-6-193004/)
 Third photo: by [Plush Design Studio](https://www.pexels.com/photo/silver-iphone-x-with-airpods-788946/)
